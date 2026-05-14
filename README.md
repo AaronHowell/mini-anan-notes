@@ -32,7 +32,6 @@ npm install -g anna-app
 anna-app validate           # 校验配置
 anna-app validate --strict  # 校验 + host_api ACL 覆盖检查
 anna-app dev                # 启动开发环境
-# 浏览器打开 http://127.0.0.1:5180/dev/<wid>?t=<dev-token>
 ```
 
 ## 构建前端

@@ -4,29 +4,19 @@ export interface AnnaToolInvokePayload {
   args: Record<string, unknown>;
 }
 
-export interface AnnaToolInvokeResult {
-  success?: boolean;
-  tool?: string;
-  data?: unknown;
-  result?: {
-    data?: unknown;
-  };
-  summary?: string;
-  count?: number;
-  categories?: string[];
-}
-
 export interface AnnaRuntime {
-  tools: {
-    invoke: (payload: AnnaToolInvokePayload) => Promise<AnnaToolInvokeResult>;
+  tools?: {
+    invoke: <T = unknown>(args: AnnaToolInvokePayload) => Promise<T>;
   };
+
   window?: {
-    set_title?: (payload: { title: string }) => Promise<unknown>;
-    ready?: (payload?: Record<string, unknown>) => Promise<unknown>;
+    set_title?: (args: { title: string }) => Promise<unknown>;
+    ready?: (args?: Record<string, unknown>) => Promise<unknown>;
   };
+
   storage?: {
-    get?: (payload: { key: string }) => Promise<unknown>;
-    set?: (payload: { key: string; value: unknown }) => Promise<unknown>;
+    get?: (args: { key: string }) => Promise<unknown>;
+    set?: (args: { key: string; value: unknown }) => Promise<unknown>;
   };
 }
 

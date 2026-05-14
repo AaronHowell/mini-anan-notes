@@ -251,7 +251,7 @@ def handle_message(line: str) -> None:
     params = msg.get("params") or {}
 
     if method == "initialize":
-        response = handle_initialize(req_id, params)
+        response = handle_initialize(req_id, params)#?
     elif method == "describe":
         response = handle_describe(req_id)
     elif method == "health":
@@ -274,7 +274,7 @@ def handle_message(line: str) -> None:
 
 
 def main() -> None:
-    print("mini-notes plugin started", file=sys.stderr)
+    print("mini-notes plugin started", file=sys.stderr) #日志输出到stderr，确保与协议通信的stdout保持干净
 
     for raw in sys.stdin:
         line = raw.strip()
