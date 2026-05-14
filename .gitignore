@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+app/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
+executas/mini-notes/.venv/
+executas/mini-notes/__pycache__/
+executas/mini-notes/tool_dev_mini_notes.egg-info/
+
+# Lock files (optional, keep if you want reproducible builds)
+# app/package-lock.json
+# executas/mini-notes/uv.lock
+
+# Build output
+bundle/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Scaffold backup (internal)
+.scaffold-backup/
