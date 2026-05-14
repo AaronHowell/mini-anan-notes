@@ -9,6 +9,7 @@ const notes = ref<Note[]>([])
 const newNoteContent = ref('')
 const summaryResult = ref<NotesSummary | null>(null)
 const summarizing = ref(false)
+const showSummary = ref(false)
 
 const noteCount = computed(() => notes.value.length)
 
@@ -75,6 +76,7 @@ async function summarize() {
 
   try {
     summaryResult.value = await summarizeNotes(notes.value)
+    showSummary.value = true
     ElMessage.success('Summary generated')
   } catch (error) {
     const message =
@@ -158,14 +160,13 @@ async function summarize() {
       </el-table>
     </el-card>
 
-    <el-card v-if="summaryResult" class="summary-card" shadow="hover">
-      <template #header>
-        <div class="card-header">
-          <span>Summary</span>
-        </div>
-      </template>
-
-      <el-descriptions :column="1" border>
+    <el-dialog
+      v-model="showSummary"
+      title="Summary"
+      width="500px"
+      @close="summaryResult = null"
+    >
+      <el-descriptions v-if="summaryResult" :column="1" border>
         <el-descriptions-item label="Summary">
           {{ summaryResult.summary }}
         </el-descriptions-item>
@@ -199,7 +200,7 @@ async function summarize() {
           </div>
         </el-descriptions-item>
       </el-descriptions>
-    </el-card>
+    </el-dialog>
   </div>
 </template>
 
