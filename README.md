@@ -34,6 +34,20 @@ anna-app validate --strict  # 校验 + host_api ACL 覆盖检查
 anna-app dev                # 启动开发环境
 ```
 
+### 截图
+
+**anna-app validate**
+
+![anna-app validate](anna-appvalidate.png)
+
+**anna-app dev**
+
+![anna-app dev](anna-appdev.png)
+
+**应用运行效果**
+
+![应用运行效果](view.png)
+
 ## 构建前端
 
 ```bash
