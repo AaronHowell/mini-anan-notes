@@ -20,8 +20,9 @@ executas/mini-notes/tool_dev_mini_notes.egg-info/
 # app/package-lock.json
 # executas/mini-notes/uv.lock
 
-# Build output
-bundle/
+# Build output (run `cd app && npm run build` to generate)
+bundle/*
+!bundle/.gitkeep
 
 # IDE
 .vscode/
