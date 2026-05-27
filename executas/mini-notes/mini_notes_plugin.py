@@ -11,7 +11,7 @@ from typing import Any, Dict, List
 TOOL_NAME = "summarize_notes"
 
 MANIFEST = {
-    "name": "mini-notes",
+    "name": "tool-dev-mini-notes",
     "display_name": "Mini Notes",
     "version": "0.1.0",
     "description": "Local Mini Notes Executa tool.",
