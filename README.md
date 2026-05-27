@@ -96,9 +96,9 @@ echo '{"jsonrpc":"2.0","id":4,"method":"invoke","params":{"method":"summarize_no
 ## bundle / manifest / executas 的关系
 
 ```
-manifest.json          应用的"身份证"
+manifest.json          应用的metadata
   │
-  ├─ ui.bundle ──────► bundle/              前端构建产物
+  ├─ ui.bundle ──────► bundle/              前端构建产物 SPA
   │   指定 entry:         Vite 打包后的静态文件 (HTML/CSS/JS)
   │   "index.html"        Anna App 宿主加载这个目录作为 UI
   │
@@ -108,7 +108,7 @@ manifest.json          应用的"身份证"
                             anna.tools.invoke() 调用
 ```
 
-- **manifest.json**：告诉 Anna App 宿主"我是谁、我需要什么权限、我的 UI 在哪、我依赖哪些后端工具"
+- **manifest.json**：Anna App 的核心元数据与能力声明文件，用来告诉 Anna harness 这个应用的基本信息、前端 bundle 入口、窗口配置、可调用的本地 Executa tools，以及 UI 被允许访问哪些 host API。
 - **bundle/**：`npm run build` 的产物，是宿主实际加载的前端资源
 - **executas/**：后端插件目录，宿主会启动其中的 Python 进程，通过 stdin/stdout 与前端通信
 
